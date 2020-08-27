@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>HomeWork7</title>
+        <link rel="stylesheet" href="hw7.css">
+        <link href="https://fonts.googleapis.com/css?family=Black+And+White+Picture|Eater&display=swap"
+            rel="stylesheet">
+
+    </head>
+
+    <body>
+        <div class="form_registr">
+            <div class="form_registr__wrapper">
+                <div class="form_registr__title">
+                    <div class="form_registr__title__text">Event registration</div>
+                </div>
+                <div class="form_registr__content_wrapper">
+                    <form>
+                        <div class="form_registr__content_wrapper_inside">
+                            <div class="form_registr__name form_registr__content_box">
+                                <div class="form_registr__name__question form_registr__content_question">
+                                    <label for="name">Your name</label></div>
+                                <div class="form_registr__name__answer form_registr__content_answer">
+                                    <input required type="text" placeholder="Enter your name" name="name"
+                                        id="name"></input></div>
+                            </div>
+                            <div class="form_registr__astral_name form_registr__content_box">
+                                <div class="form_registr__astral_name__question form_registr__content_question">
+                                    <label for="astral_name">Your astral
+                                        name</label></div>
+                                <div class="form_registr__astral_name__answer form_registr__content_answer">
+                                    <input required type="text" placeholder="Enter your astral name" name="astral_name"
+                                        id="name"></div>
+                            </div>
+                            <div class="form_registr__date form_registr__content_box">
+                                <div class="form_registr__date__question form_registr__content_question">
+                                    <label for="date_of_birth">Date of birth</label></div>
+                                <div class="form_registr__date__answer form_registr__content_answer">
+                                    <input required type="date" name="date_of_birth">
+                                    <span class="form_registr__date__comment">(Witches under 80 must be
+                                        accompanied!)</span></div>
+                            </div>
+                            <div class="form_registr__transport form_registr__content_box">
+                                <div class="form_registr__transport__question form_registr__content_question">
+                                    <label for="transport">Way to travel</label></div>
+                                <div class="form_registr__transport__answer form_registr__content_answer">
+                                    <select class="form_registr__transport__select" name="transport" id="transport">
+                                        <option value="levitation">Levitation</option>
+                                        <option value="broomstick">On a broomstick</option>
+                                        <option value="mortar">In a mortar</option>
+                                        <option value="riding">Riding on the devil</option>
+                                    </select></div>
+                            </div><br>
+                            <div class="form_registr__demon form_registr__content_box">
+                                <div class="form_registr__demon__question form_registr__content_question">
+                                    <label>Select a demon to summon</label><br></div>
+                                <div class="form_registr__demon__answer form_registr__content_answer">
+                                    <div class="form_registr__radio"><input type="radio" value="Satan" id="main_demon"
+                                            name="demon">
+                                        <label for="main_demon">Satan</label></div>
+                                    <div class="form_registr__radio"><input class="form_registr__radio" type="radio"
+                                            value="Abbadon" id="first_demon" name="demon">
+                                        <label for="first_demon">Abbadon</label></div>
+                                    <div class="form_registr__radio"><input class="form_registr__radio" type="radio"
+                                            value="Azazel" id="second_demon" name="demon">
+                                        <label for="second_demon">Azazel</label></div>
+                                    <div class="form_registr__radio"><input class="form_registr__radio" type="radio"
+                                            value="Beelzebub" id="third_demon" name="demon">
+                                        <label for="third_demon">Beelzebub</label></div>
+                                    <div class="form_registr__radio"><input class="form_registr__radio" type="radio"
+                                            value="Belial" id="fourth_demon" name="demon">
+                                        <label for="fourth_demon">Belial</label></div>
+                                    <div class="form_registr__radio"><input class="form_registr__radio" type="radio"
+                                            value="Leviathan" id="fifth_demon" name="demon">
+                                        <label for="fifth_demon">Leviathan</label></div>
+                                </div>
+                            </div>
+                            <div class="form_registr__grimoire form_registr__content_box">
+                                <div class="form_registr__grimoire__question form_registr__content_question">
+                                    <label for="grimoire">How grammara use?</label></div>
+                                <div class="form_registr__grimoire__answer form_registr__content_answer">
+                                    <textarea name="grimoire"></textarea></div>
+                            </div>
+                            <div class="form_registr__inquisition form_registr__content_box">
+                                <div class="form_registr__inquisition__question form_registr__content_question">
+                                    <label for="inquisition">How many times have you been caught by the
+                                        Inquisition?</label></div>
+                                <div class="form_registr__inquisition__answer form_registr__content_answer">
+                                    <input type="number" name="inquisition" min="0"></div>
+                            </div>
+                            <div class="form_registr__reason form_registr__content_box">
+                                <div class="form_registr__reason__question form_registr__content_question">
+                                    <label for="reason">When was the last time and why?</label></div>
+                                <div class="form_registr__reason__answer form_registr__content_answer">
+                                    <textarea name="reason"></textarea></div>
+                            </div>
+                            <div class="form_registr__last_visit form_registr__content_box">
+                                <div class="form_registr__last_visit__question form_registr__content_question">
+                                    <label for="visit_last_time">I attended the Walpurgis night coven last year</label>
+                                </div>
+                                <div class="form_registr__last_visit__answer form_registr__content_answer">
+                                    <input id="visit_last_time" type="checkbox"><label
+                                        for="visit_last_time"><span></span></label></div>
+                            </div>
+                            <div class="form_registr__future_visit form_registr__content_box">
+                                <div class="form_registr__future_visit__question form_registr__content_question">
+                                    <label for="visit_in_future">I want to get here next year</label></div>
+                                <div class="form_registr__future_visit__answer form_registr__content_answer">
+                                    <input id="visit_in_future" type="checkbox" checked><label
+                                        for="visit_in_future"><span></span></label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form_registr__button_box">
+                            <div class="form_registr__button__submit"><button class="form_registr__button"><input
+                                        type="submit" value="I want to have fun!"></button></div>
+                            <div class="form_registr__button__reset"><button class="form_registr__button"><input
+                                        type="reset" value="Too dumb to fill it in right the first time"></button></div>
+                        </div>
+                    </form>
+                </div>
+
+                <svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" width="600px" height="100px" viewBox="0 0 600 100">
+                    <style type="text/css">
+
+                        text {
+                            filter: url(#filter);
+                            fill: white;
+                            font-family: 'Share Tech Mono', sans-serif;
+                            font-size: 30px;
+                            -webkit-font-smoothing: antialiased;
+                            -moz-osx-font-smoothing: grayscale;
+                        }
+
+                    </style>
+                    <defs>
+
+                        <filter id="filter">
+                            <feFlood flood-color="black" result="black" />
+                            <feFlood flood-color="red" result="flood1" />
+                            <feFlood flood-color="limegreen" result="flood2" />
+                            <feOffset in="SourceGraphic" dx="3" dy="0" result="off1a" />
+                            <feOffset in="SourceGraphic" dx="2" dy="0" result="off1b" />
+                            <feOffset in="SourceGraphic" dx="-3" dy="0" result="off2a" />
+                            <feOffset in="SourceGraphic" dx="-2" dy="0" result="off2b" />
+                            <feComposite in="flood1" in2="off1a" operator="in" result="comp1" />
+                            <feComposite in="flood2" in2="off2a" operator="in" result="comp2" />
+
+                            <feMerge x="0" width="100%" result="merge1">
+                                <feMergeNode in="black" />
+                                <feMergeNode in="comp1" />
+                                <feMergeNode in="off1b" />
+
+                                <animate attributeName="y" id="y" dur="4s"
+                                    values='104px; 104px; 30px; 105px; 30px; 2px; 2px; 50px; 40px; 105px; 105px; 20px; 6ßpx; 40px; 104px; 40px; 70px; 10px; 30px; 104px; 102px'
+                                    keyTimes='0; 0.362; 0.368; 0.421; 0.440; 0.477; 0.518; 0.564; 0.593; 0.613; 0.644; 0.693; 0.721; 0.736; 0.772; 0.818; 0.844; 0.894; 0.925; 0.939; 1'
+                                    repeatCount="indefinite" />
+
+                                <animate attributeName="height" id="h" dur="4s"
+                                    values='10px; 0px; 10px; 30px; 50px; 0px; 10px; 0px; 0px; 0px; 10px; 50px; 40px; 0px; 0px; 0px; 40px; 30px; 10px; 0px; 50px'
+                                    keyTimes='0; 0.362; 0.368; 0.421; 0.440; 0.477; 0.518; 0.564; 0.593; 0.613; 0.644; 0.693; 0.721; 0.736; 0.772; 0.818; 0.844; 0.894; 0.925; 0.939; 1'
+                                    repeatCount="indefinite" />
+                            </feMerge>
+
+
+                            <feMerge x="0" width="100%" y="60px" height="65px" result="merge2">
+                                <feMergeNode in="black" />
+                                <feMergeNode in="comp2" />
+                                <feMergeNode in="off2b" />
+
+                                <animate attributeName="y" id="y" dur="4s"
+                                    values='103px; 104px; 69px; 53px; 42px; 104px; 78px; 89px; 96px; 100px; 67px; 50px; 96px; 66px; 88px; 42px; 13px; 100px; 100px; 104px;'
+                                    keyTimes='0; 0.055; 0.100; 0.125; 0.159; 0.182; 0.202; 0.236; 0.268; 0.326; 0.357; 0.400; 0.408; 0.461; 0.493; 0.513; 0.548; 0.577; 0.613; 1'
+                                    repeatCount="indefinite" />
+
+                                <animate attributeName="height" id="h" dur="4s"
+                                    values='0px; 0px; 0px; 16px; 16px; 12px; 12px; 0px; 0px; 5px; 10px; 22px; 33px; 11px; 0px; 0px; 10px'
+                                    keyTimes='0; 0.055; 0.100; 0.125; 0.159; 0.182; 0.202; 0.236; 0.268; 0.326; 0.357; 0.400; 0.408; 0.461; 0.493; 0.513;  1'
+                                    repeatCount="indefinite" />
+                            </feMerge>
+
+                            <feMerge>
+                                <feMergeNode in="SourceGraphic" />
+
+                                <feMergeNode in="merge1" />
+                                <feMergeNode in="merge2" />
+
+                            </feMerge>
+                        </filter>
+
+                    </defs>
+
+                    <g>
+                        <text x="0" y="100">DON'T FORGET TO USE INVISIBILITY!</text>
+                    </g>
+                </svg>
+            </div>
+        </div>
+    </body>
+
+</html>

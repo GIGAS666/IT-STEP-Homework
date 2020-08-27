@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>HomeWork16</title>
+        <link rel="stylesheet" href="hw16.css">
+    </head>
+
+    <body>
+        <div class="global-conteiner">
+            <div class="box-of-task">
+                <div>CROPPING A STRING</div>
+                To view the result of example<input class="button button-function" type="button" value="press here"
+                    name="croppingAString" OnClick="croppingAString();"> If you want enter your
+                sentence <input class="button button-function" type="button" value="press here"
+                    name="userExampleForCropping" OnClick="userExampleForCropping();">
+                <div class="inner-box" id="croppingAString"></div>
+            </div>
+            <div class="box-of-task">
+                <div>CAPITALIZATION OF A STRING</div>
+                To check the operation of the capitalizer and enter the text <input class="button button-function"
+                    type="button" value="press here" name="capitalizationOfAString"
+                    OnClick="capitalizationOfAString();">
+                <div class="inner-box" id="capitalizationOfAString"></div>
+            </div>
+            <div class="box-of-task">
+                <div>ANALYSIS OF THE ROW</div>
+                To enter an offer for analysis<input class="button button-function" type="button" value="press here"
+                    name="analysisOfTheRow" OnClick="analysisOfTheRow();">
+                <div class="inner-box" id="analysisOfTheRow"></div>
+            </div>
+            <div class="box-of-task">
+                <div>SEARCH FOR A BAN WORD</div>
+                To check the operation<input class="button button-function" type="button" value="press here"
+                    name="searchForABanWord" OnClick="searchForABanWord();">If you want enter you sentence
+                <input class="button button-function" type="button" value="press here"
+                    name="searchForABanWordWihUsersData" OnClick="searchForABanWordWihUsersData();">
+                <div class="inner-box" id="searchForABanWord"></div>
+            </div>
+        </div>
+
+        <script>
+            'use strict'
+            function croppingAString() {
+                let firstSentence = 'I beat your face up and won a lot of money. I am not interested in your reputation.';
+                let secondSentence = 'Every king has so much shit behind his back that stabbing him with a knife is a fair thing anyway.';
+                let thirdSentence = 'It is easier to make great plans than to put them into practice.';
+                document.getElementById('croppingAString').innerHTML += 'Original: ' + firstSentence + "<br>";
+                document.getElementById('croppingAString').innerHTML += secondSentence + "<br>";
+                document.getElementById('croppingAString').innerHTML += thirdSentence + "<br>";
+                let trimmedString = (str) => {
+                    let begin = str.slice(0, 30);
+                    let finish = '...';
+                    return begin + finish
+                };
+                document.getElementById('croppingAString').innerHTML += 'Result: ' + trimmedString(firstSentence) + "<br>";
+                document.getElementById('croppingAString').innerHTML += trimmedString(secondSentence) + "<br>";
+                document.getElementById('croppingAString').innerHTML += trimmedString(thirdSentence) + "<br>";
+            }
+            function userExampleForCropping() {
+                let userStringForCropping = prompt('Enter your sentence');
+                if (userStringForCropping == null) {
+                    document.getElementById('croppingAString').innerHTML += 'You refused to perform the verification operation' + "<br>";
+                } else {
+                    let trimmedString = (str) => {
+                        if (str.length > 30) {
+                            let begin = str.slice(0, 30);
+                            let finish = '...';
+                            return begin + finish
+                        }
+                        return str
+                    };
+                    document.getElementById('croppingAString').innerHTML += 'Your original example: ' + userStringForCropping + "<br>";
+                    document.getElementById('croppingAString').innerHTML += 'Your reworked example: ' + trimmedString(userStringForCropping) + "<br>";
+                }
+            }
+
+            function capitalizationOfAString() {
+                let userString = prompt('Enter any sentence');
+                if (userString == null) {
+                    document.getElementById('capitalizationOfAString').innerHTML += 'You refused to perform the verification operation';
+                } else {
+                    document.getElementById('capitalizationOfAString').innerHTML += "It's your source sentence: " + userString + "<br>";
+                    let splitOfString = userString.split('');
+                    let changingTheCase = splitOfString.map(
+                        item => item == item.toUpperCase() ? item = item.toLowerCase() : item = item.toUpperCase());
+                    document.getElementById('capitalizationOfAString').innerHTML += "It's your revised sentence: " + changingTheCase.join('') + "<br>";
+                }
+            }
+
+            function analysisOfTheRow() {
+                let anyUserString = prompt('Enter any sentence');
+                if (anyUserString == null || anyUserString == '') {
+                    anyUserString = prompt('Enter correct data!')
+                    if (anyUserString == null || anyUserString == '') {
+                        console.log('You enter uncorrect data!');
+                        document.getElementById('analysisOfTheRow').innerHTML += 'You enter uncorrect data!' + "<br>";
+                    } else {
+                        analysisOfSpecifications()
+                    }
+                } else {
+                    analysisOfSpecifications()
+                }
+                function analysisOfSpecifications() {
+                    let allSymbols = anyUserString.length;
+                    document.getElementById('analysisOfTheRow').innerHTML += 'All Symbols: ' + allSymbols + "<br>";
+                    let symbolsWithoutSpaces = anyUserString.split(' ').join('').length;
+                    document.getElementById('analysisOfTheRow').innerHTML += 'Symbol without space: ' + symbolsWithoutSpaces + "<br>";
+                    let quantityOfWords = anyUserString.split(' ').length;
+                    document.getElementById('analysisOfTheRow').innerHTML += 'Quantity of word: ' +  quantityOfWords + "<br>";
+                    let sentenceType = anyUserString.split('');
+                    definingTypeOffSentence();
+                    function definingTypeOffSentence() {
+                        if (anyUserString.indexOf('.') != -1) {
+                            sentenceType = 'narrative';
+                        } else if (anyUserString.indexOf('!') != -1) {
+                            sentenceType = 'exclamation';
+                        } else if (anyUserString.indexOf('?') != -1) {
+                            sentenceType = 'question';
+                        } else {
+                            sentenceType = 'neutral';
+                        }
+                    }
+                    document.getElementById('analysisOfTheRow').innerHTML +='Type of sentence: ' + sentenceType + "<br>";
+                }
+            }
+
+            function searchForABanWord() {
+                let experimentalString = '― Мой Хвост? ― Мой настоящий собственный хвост? ― Ну конечно, мой хвостатый друг!';
+                document.getElementById('searchForABanWord').innerHTML += 'Experemental sentence: ' + experimentalString + "<br>";
+                let bannedWord = 'хвост';
+                document.getElementById('searchForABanWord').innerHTML += 'Experemental banned word: ' + bannedWord + "<br>";
+                let newExperimentalString = experimentalString.split(',').join(' ,').split('.').join(' .').split('?').join(' ?').split('!').join(' !').split(' ');
+                let moderateWord = '';
+                for (let i = 0; i < bannedWord.length; i++) {
+                    moderateWord += '*';
+                }
+                let moderateString = newExperimentalString.map(
+                    item => item.toLowerCase() == bannedWord ? item = moderateWord : item = item
+                )
+                document.getElementById('searchForABanWord').innerHTML += 'Result: ' + moderateString.join(' ') + "<br>";
+            }
+            function searchForABanWordWihUsersData() {
+                let experimentalString = prompt('Enter your sentence');
+                let bannedWord = prompt('Enter your ban-word');
+                if (experimentalString == null || bannedWord == null) {
+                    document.getElementById('searchForABanWord').innerHTML += 'You enter uncorrect data!' + "<br>";
+                } else {
+                    document.getElementById('searchForABanWord').innerHTML += 'You sentence: ' + experimentalString + "<br>";
+                    document.getElementById('searchForABanWord').innerHTML += 'You banned word: ' + bannedWord + "<br>";
+                    let newExperimentalString = experimentalString.split(',').join(' ,').split('.').join(' .').split('?').join(' ?').split('!').join(' !').split(' ');
+                    let moderateWord = '';
+                    for (let i = 0; i < bannedWord.length; i++) {
+                        moderateWord += '*';
+                    }
+                    let moderateString = newExperimentalString.map(
+                        item => item.toLowerCase() == bannedWord ? item = moderateWord : item = item
+                    )
+                    document.getElementById('searchForABanWord').innerHTML += 'Your result: ' + moderateString.join(' ') + "<br>";
+                }
+            }
+        </script>
+
+    </body>
+
+</html>

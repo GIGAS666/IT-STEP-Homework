@@ -1,0 +1,276 @@
+body {
+    background-image: url(https://www.visitgalena.org/wp-content/uploads/2016/05/shutterstock_91949213.jpg);
+    background-size: cover ;
+    background-attachment: fixed;
+    padding: 0;
+    margin: 0;
+    font-family: 'Special Elite', cursive;
+}
+
+.title {
+    width: 100%;
+    background-color: rgba(252, 29, 13, 0.1);
+    text-align: center;
+}
+
+.title__name {
+    width: 80%;
+    margin: auto;
+    padding-top: 30px;
+}
+
+.title__name-text {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.title__info {
+    width: 90%;
+    margin: 0 5%;
+}
+
+.title__info-text {
+    font-size: 25px;
+    padding-top: 20px;
+}
+
+.product {
+    margin: 50px auto;
+}
+
+.product__block {
+    margin: 20px 0;
+}
+
+.product__category {
+    margin: 20px auto;
+    text-align: center;
+}
+
+.product__category-name {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.product__content {
+    width: 90%;
+    margin:auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.product__box {
+    width: 350px;
+    height: 450px;
+    border:solid black 2px;
+    margin: 15px;
+}
+
+.product__box-image {
+    height: 80%;
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.product__cost {
+    text-align: center;
+    padding: 5px 0;
+    font-size: 30px;
+    font-weight: bold;
+    background-color: rgba(255,255,255,0.3);
+    display: none;
+}
+
+.product__box-image:hover .product__cost{
+    display: block;
+}
+
+.product__box-info {
+    background-color: rgba(0,0,0,0.2);
+    height: 20%;
+    font-size: 20px;
+    text-align: center;
+}
+
+.contacts {
+    font-size: 30px;
+    text-align: center;
+}
+
+.product__box-wand:nth-child(-n+3) {
+    border: groove red 3px;
+    color: red;
+    text-shadow: 1px 1px 2px black, 0 0 1em black;
+}
+
+.product__box-knife:nth-child(-n+4) {
+    border: groove red 3px;
+    color: red;
+    text-shadow: 1px 1px 2px black, 0 0 1em black;
+}
+
+@media (min-width: 1600px) {
+    .product {
+        width: 90%;
+        margin: auto;
+    }
+    .product__content {
+        width: 100%;
+    }
+    .title {
+        padding: 15px 30px;
+    }
+    .product__cost {
+        font-size: 35px;
+    }
+}
+
+@media (max-width:1250px) {
+    .product {
+        width: 1000px;
+        margin: 30px auto;
+    }
+    .product__content {
+        width: 100%;
+    }
+    .product__box {
+        width: 250px;
+        height: 360px;
+        margin: 10px;
+    }
+    .product__cost {
+        font-size: 20px;
+    }
+    .product__box-info {
+        font-size: 20px;
+        height: 30%;
+    }
+    .product__box-image {
+        height: 70%;
+    }
+}
+
+@media (max-width:1000px) {
+    .product {
+        width: 90%;
+        margin: 10px auto;
+    }
+    .product__content {
+        width: 100%;
+    }
+    .product__box {
+        width: 150px;
+        height: 270px;
+        margin: 5px;
+    }
+    .product__cost {
+        font-size: 10px;
+    }
+    .product__box-info {
+        font-size: 15px;
+        height: 35%;
+    }
+    .product__box-image {
+        height: 65%;
+    }
+}
+
+.product__box-image_athame {
+    background-image: url(https://www.magicbay.ru/published/publicdata/MAGICBAYRUSHOP/attachments/SC/products_pictures/нож%20рогa7_enl.jpg);
+}
+
+.product__box-image_fang {
+    background-image: url(https://www.magicbay.ru/published/publicdata/MAGICBAYRUSHOP/attachments/SC/products_pictures/атам8_enl.jpg);
+}
+
+.product__box-image_needle {
+    background-image: url(https://www.magicbay.ru/published/publicdata/MAGICBAYRUSHOP/attachments/SC/products_pictures/нож%20плетенкаz7_enl.jpg);
+}
+
+.product__box-image_eagle {
+    background-image: url(https://www.magicbay.ru/published/publicdata/MAGICBAYRUSHOP/attachments/SC/products_pictures/нож%20ритуальныйbq_enl.jpg);
+}
+
+.product__box-image_phurba {
+    background-image: url(http://бэлла.рф/components/com_jshopping/files/img_products/thumb_________________________________________________10.JPG);
+}
+
+.product__box-image_elk {
+    background-image: url(https://www.magicbay.ru/published/publicdata/MAGICBAYRUSHOP/attachments/SC/products_pictures/0080id_enl.jpg);
+}
+
+.product__box-image_two-faced {
+    background-image: url(https://www.magicbay.ru/published/publicdata/MAGICBAYRUSHOP/attachments/SC/products_pictures/нож%20двуликий2nk_enl.jpg);
+}
+
+.product__box-image_roe {
+    background-image: url(https://www.magicbay.ru/published/publicdata/MAGICBAYRUSHOP/attachments/SC/products_pictures/нож%20на%20черном%20фоне_enl.jpg);
+}
+
+.product__box-image_pig {
+    background-image: url(https://www.magicbay.ru/published/publicdata/MAGICBAYRUSHOP/attachments/SC/products_pictures/нож%20из%20кости%202u0_enl.jpg);
+}
+
+.product__box-image_oak {
+    background-image: url(https://www.magicbay.ru/published/publicdata/MAGICBAYRUSHOP/attachments/SC/products_pictures/нож%20кинжал4s_enl.jpg);
+}
+
+.product__box-image_fox {
+    background-image: url(https://www.magicbay.ru/published/publicdata/MAGICBAYRUSHOP/attachments/SC/products_pictures/нож%20челюстьe2_enl.jpg);
+}
+
+.product__box-image_elk-deer {
+    background-image: url(https://www.magicbay.ru/published/publicdata/MAGICBAYRUSHOP/attachments/SC/products_pictures/нож%20костьyu_enl.jpg);
+}
+
+.product__box-image_owl {
+    background-image: url(https://cs1.livemaster.ru/storage/55/8f/1aedf06d37194d3af6e69736099i--fen-shuj-i-ezoterika-magicheskij-posoh-duh-sovy.jpg);
+}
+
+.product__box-image_rosewood {
+    background-image: url(https://www.magicbay.ru/published/publicdata/MAGICBAYRUSHOP/attachments/SC/products_pictures/аметист_enl.jpg);
+}
+
+.product__box-image_aventurine {
+    background-image: url(https://www.magicbay.ru/published/publicdata/MAGICBAYRUSHOP/attachments/SC/products_pictures/жезлra_enl.jpg);
+}
+
+.product__box-image_yel-quartz {
+    background-image: url(https://www.magicbay.ru/published/publicdata/MAGICBAYRUSHOP/attachments/SC/products_pictures/3746_enl.jpg);
+}
+
+.product__box-image_ametist-quartz {
+    background-image: url(https://www.magicbay.ru/published/publicdata/MAGICBAYRUSHOP/attachments/SC/products_pictures/22.45.12sj_enl.jpg);
+}
+
+.product__box-image_rosewood-crystal {
+    background-image: url(https://www.magicbay.ru/published/publicdata/MAGICBAYRUSHOP/attachments/SC/products_pictures/17.41.31_enl.jpg);
+}
+
+.product__box-image_jasper {
+    background-image: url(https://www.magicbay.ru/published/publicdata/MAGICBAYRUSHOP/attachments/SC/products_pictures/DSC_28828_enl.jpg);
+}
+
+.product__box-image_kyanite {
+    background-image: url(https://www.magicbay.ru/published/publicdata/MAGICBAYRUSHOP/attachments/SC/products_pictures/3uc_enl.jpg);
+}
+
+.product__box-image_kyanite-malachite {
+    background-image: url(https://www.magicbay.ru/published/publicdata/MAGICBAYRUSHOP/attachments/SC/products_pictures/2958bu_enl.jpg);
+}
+
+.product__box-image_peach-aventurine {
+    background-image: url(https://www.magicbay.ru/published/publicdata/MAGICBAYRUSHOP/attachments/SC/products_pictures/0280_enl.jpg);
+}
+
+.product__box-image_mixed-rock {
+    background-image: url(https://www.magicbay.ru/published/publicdata/MAGICBAYRUSHOP/attachments/SC/products_pictures/store_apendix_big1299_2739.jpg);
+}
+
+.product__box-image_chakral-wand {
+    background-image: url(https://www.magicbay.ru/published/publicdata/MAGICBAYRUSHOP/attachments/SC/products_pictures/DSC_299968_enl.jpg);
+}

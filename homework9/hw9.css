@@ -1,0 +1,168 @@
+body {
+    background-image: 
+    url(2.png) , 
+    url(1.png) , 
+    url(3.png) , 
+    url(4.png) ;
+    background-size: 15% 50%;
+    background-repeat: no-repeat;
+    background-position:left top,
+    left 100%,
+    right top,
+    right 100%;
+    background-attachment: fixed;
+    padding: -8px;
+}
+
+.link {
+    text-decoration: none;
+    cursor: pointer;
+    color: black;
+    font-weight: bold;
+}
+
+.content__wrapper {
+    width: 70%;
+    margin:-8px 14.4%;
+    position: absolute ;
+    background-image: url(https://i.pinimg.com/originals/0a/5d/b7/0a5db7ff653cf39b74fcece828016a95.jpg);
+    background-size: cover;
+    outline: solid black 2px;
+}
+
+.content__title-box {
+    background-color: rgba(92, 133, 237,0.5);
+    width: 100%;
+}
+
+.content__title-name {
+    font-family: 'Cinzel', serif;
+    font-size: 50px;
+    text-align: center;
+}
+
+.content__title-info {
+    text-align: center;
+    font-family: 'Playfair Display SC', serif;
+    font-size: 20px;
+    display: none;
+    padding-bottom: 20px;
+}
+
+.content__title-box:hover .content__title-info {
+    display: block;
+}
+
+.content__box {
+    background-color: rgba(196, 25, 212,0.1);
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 0;
+    padding-right: -16px;
+}
+
+.content__part {
+    width: 50%;
+    padding: 90px 0;
+    border: solid black 2px;
+    box-sizing: border-box;
+}
+
+.content__class {
+    font-family: 'Cinzel', serif;
+    font-size: 80px;
+    text-align: center;
+    text-shadow: 1px 1px 2px #fcfafc;
+}
+
+.content__list-wrapper {
+    width: 50%;
+    margin: auto;
+    display: none;
+}
+
+.content__list {
+    font-family: 'Cinzel', serif;
+    font-size: 20px;
+    text-shadow: 1px 1px 2px #fcfafc;
+}
+
+.contacts-box {
+    width: 100%;
+    position: absolute;
+    bottom: -8px;
+}
+
+.contacts {
+    background-color:rgba(92, 133, 237,0.5);
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+@media (max-width:1200px) {
+    .content__wrapper {
+        width: 103%;
+        margin:-8px;
+    }
+    body {
+        background: none;
+    }
+}
+
+@media (max-width:800px) {
+    .content__wrapper {
+        width: 105%;
+        margin:-8px;
+    }
+    .content__class {
+        font-size: 40px;
+    }
+    .content__list-wrapper{
+        width: 80%;
+    }
+    body {
+        background: none;
+    }
+    .content__part {
+        width: 100%;
+    }
+}
+
+@media (min-width:1700px) {
+    .content__part {
+        width: 33.33%;
+        min-height: 700px;
+    }
+    .content__wrapper {
+        width: 70.5%;
+    }
+}
+
+@media (max-width:1699px) {
+    .content__part {
+        min-height: 400px;
+    }
+}
+
+.checklist {
+    display: none;
+}
+
+.checklist + label ~ .content__list-wrapper{
+    display: none;
+}
+
+.checklist + label {
+    cursor: pointer;
+    display: block;
+}
+
+.checklist:checked + label + .content__list-wrapper {
+    display: block;
+}
+
+.checklist:checked .content__part {
+    height: auto;
+}
+

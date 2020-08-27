@@ -1,0 +1,126 @@
+body{
+    background-color: lightgreen;
+}
+.main_block{
+    width: 1100px;
+    margin: auto;
+    background-color: whitesmoke;
+}
+.subtitle{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    margin-left: 5%;
+}
+.box_one{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.subbox_one_two{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.meat{
+    background-color: darkorchid;
+    border: solid darkmagenta 3px;
+    width: 80px;
+    height: 15px;
+    text-align: center;
+    margin: 5px;
+}
+.box_two{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.subbox_two_two{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.box_three{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.meat_three_two{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-self: flex-end;
+}
+.meat_four_one{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.meat_four_two{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.box_five{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.submeat_five{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.meat_five_one{
+    display: flex;
+    flex-direction: column;
+}
+.meat_five_two{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: space-between;
+}
+.box_six{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.meat_six_one{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-content: flex-end;
+}
+.submeat_six{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.meat_six_two{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.box_seven{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.meat_seven_two{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-self: flex-end;
+}
+.meat_seven_three{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-self: center;
+}
+.meat_seven_four{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-self: flex-start;
+}

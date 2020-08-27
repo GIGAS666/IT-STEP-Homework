@@ -1,0 +1,116 @@
+body {
+    background-image: url(https://www.nastol.com.ua/download.php?img=201209/2560x1600/nastol.com.ua-31267.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.test-block{
+    width: 70%;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.test-block__part {
+    width: 85%;
+    margin: 30px auto;
+    border: solid blue 2px;
+    display: flex;
+    flex-direction: column;
+}
+
+.test-block__title {
+    color: blue;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 50px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.test-block__question {
+    background-size: cover;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    text-align: center;
+    font-weight: bold;
+    color: black;
+    text-shadow: white  1px 1px 1px, white -1px -1px 1px, white -1px 1px 1px, white 1px -1px 1px;
+}
+
+.test-block__answer {
+    background-color: rgba(124, 122, 222,0.5);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.question-book {
+    background-image: url(http://i24.fastpic.ru/big/2011/0821/8b/55d1e339c909f5c6e10ea9c26af8d48b.jpg);
+}
+
+.question-scientist {
+    background-image: url(https://m-strana.ru/upload/resize_cache/sprint.editor/e6a/758_467_2/e6acd4fe587583d7ccb0d785d9b0f618.jpg);
+}
+
+.question-song {
+    background-image: url(https://www.culture.ru/storage/images/780b64e48f1e929fbd9b37ca759a77a9/b974269c56252b2ea1325ff2af03b4d7.jpg);
+}
+
+.test-block__checking input[type="submit"]{
+    border: solid blue 2px;
+    background-color: skyblue;
+}
+
+.test-block__checking {
+    display: flex;
+    justify-content: center;
+}
+
+.answer__radio_magicians {
+    font-family: cursive;
+}
+
+.answer__radio_time_machine {
+    font-family: sans-serif;
+}
+
+.answer__radio_double_effect {
+    font-family: monospace;
+}
+
+.answer__radio_refraction {
+    font-family: fantasy;
+}
+
+.answer__radio_cooper {
+    color: brown; 
+}
+
+.answer__radio_edison {
+    color: chartreuse;
+}
+
+.answer__radio_tesla {
+    color: gold;
+}
+
+.answer__radio_einstein {
+    color: navy;
+}
+
+.answer__check_agatha {
+    font-size: 50px;
+}
+
+.answer__check_lumen {
+    font-size: 70px;
+}
+
+.answer__check_kukry {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.answer__check_b-two {
+    font-size: 100px;
+}

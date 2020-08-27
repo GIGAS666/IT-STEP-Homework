@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <link rel="stylesheet" href="hw13.css">
+    </head>
+
+    <body>
+        <div class="secret easter-egg">Find the Easter egg</div>
+
+        <div class="main-block">
+            <input class="task-one button-function" type="button" value="Task 1" name="task-1" OnClick="firstTask();">
+            <input class="task-two button-function" type="button" value="Task 2" name="task-2" OnClick="secondTask();">
+            <input class="task-three button-function" type="button" value="Task 3" name="task-3" OnClick="thirdTas();">
+            <input class="task-four button-function" type="button" value="Task 4" name="task-4" OnClick="fourthTask();">
+            <input class="scream" type="button" value="scream" name="scream" OnClick="scream();">
+        </div>
+        <script>
+            'use strict'
+            function firstTask() {
+                let finalUserNumber;
+                let startingUserNumber = +prompt('Enter starting number');
+                let varianceOne;
+                let varianceTwo;
+                let i;
+
+                firstControl()
+                function firstControl() {
+                    if (Number.isNaN(Number(startingUserNumber))) {
+                        startingUserNumber = +prompt('Enter correct starting number!');
+                        if (Number.isNaN(Number(startingUserNumber))) {
+                            console.log('Let this fucking script work properly!');
+                            alert('Let this fucking script work properly!');
+                        } else {
+                            secondControl()
+                        }
+                    } else {
+                        secondControl()
+                    }
+                }
+                function secondControl() {
+                    finalUserNumber = +prompt('Enter final number');
+                    if (Number.isNaN(Number(finalUserNumber))) {
+                        finalUserNumber = +prompt('Enter correct final number!');
+                        if (Number.isNaN(Number(finalUserNumber))) {
+                            console.log('Is it so hard to tell numbers from letters?');
+                            alert('Is it so hard to tell numbers from letters?');
+                        } else {
+                            difference()
+                        }
+                    } else {
+                        difference()
+                    }
+                }
+                function difference() {
+                    if (startingUserNumber > finalUserNumber) {
+                        varianceOne = startingUserNumber - finalUserNumber;
+                        if (+varianceOne < 5) {
+                            startingUserNumber = +prompt('Enter correct data! Range of at least five!');
+                            firstControl();
+                        } else {
+                            rangeOfNumbers()
+                        }
+                    } else if (finalUserNumber > startingUserNumber) {
+                        varianceTwo = finalUserNumber - startingUserNumber;
+                        if (+varianceTwo < 5) {
+                            startingUserNumber = +prompt('Enter correct data! Range of at least five!');
+                            firstControl();
+                        } else {
+                            rangeOfNumbers()
+                        }
+                    }
+                }
+                function rangeOfNumbers() {
+                    if (startingUserNumber > finalUserNumber) {
+                        for (i = startingUserNumber; i >= finalUserNumber; i--) {
+                            console.log(i)
+                        }
+                    } else {
+                        for (i = startingUserNumber; i <= finalUserNumber; i++) {
+                            console.log(i)
+                        }
+                    }
+                }
+            }
+
+
+            function secondTask() {
+                let pin;
+                let pinText = 'Enter a PIN. Four numbers';
+                let count = 0;
+                let puc;
+                let pucText = 'Enter a PUC. Eight numbers';
+                let countPuc = 0;
+                do {
+                    pin = prompt(pinText);
+                    count++;
+                    console.log(count);
+                } while (((pin != '1234') && (pin != null)) && count < 3);
+                if (pin == '1234') {
+                    console.log('Success!');
+                } else if (pin == null) {
+                    console.log('It was not really necessary!');
+                } else {
+                    do {
+                        puc = prompt(pucText);
+                        countPuc++;
+                        console.log(countPuc);
+                    } while (((puc != '12345678') && (puc != null)) && countPuc < 3);
+                    if (puc == '12345678') {
+                        console.log('Success!');
+                    } else if (puc == null) {
+                        console.log('It was not really necessary!');
+                    } else {
+                        console.log('Access closed!')
+                    }
+                }
+            }
+
+
+            function thirdTas() {
+                let firstNumber = +prompt('Enter first number.');
+                let secondNumber;
+                let integrityNumber;
+                let parityNumber;
+                let chargeNumber;
+                let sizeNumber;
+                let i;
+                if (Number.isNaN(Number(firstNumber)) || firstNumber == '') {
+                    firstNumber = +prompt('Enter correct first number.');
+                    console.log(typeof firstNumber)
+                    if (Number.isNaN(Number(firstNumber)) || firstNumber == '') {
+                        alert('Good by!');
+                        console.log('Good by!');
+                        console.log(typeof firstNumber)
+                    } else {
+                        secondNumberControl()
+                    }
+                } else {
+                    secondNumberControl()
+                }
+                function secondNumberControl() {
+                    secondNumber = +prompt('Enter second number.')
+                    if (Number.isNaN(Number(secondNumber)) || secondNumber == '') {
+                        secondNumber = +prompt('Enter correct first number.');
+                        if (Number.isNaN(Number(secondNumber)) || secondNumber == '') {
+                            alert('Good by!');
+                            console.log('Good by!');
+                        } else {
+                            finalСonclusion()
+                        }
+                    } else {
+                        finalСonclusion()
+                    }
+                }
+                function finalСonclusion() {
+                    if (firstNumber > secondNumber) {
+                        for (i = firstNumber; i >= secondNumber; i--) {
+                            numbersControl()
+                            console.log(i + ' - ' + sizeNumber + integrityNumber + parityNumber + chargeNumber)
+                        }
+                    } else {
+                        for (i = firstNumber; i <= secondNumber; i++) {
+                            numbersControl()
+                            console.log(i + ' - ' + sizeNumber + integrityNumber + parityNumber + chargeNumber)
+                        }
+                    }
+                }
+                function numbersControl() {
+                    if (i > 100) {
+                        sizeNumber = ' greater than 100, '
+                    } else if (i == 100) {
+                        sizeNumber = ' 100,'
+                    } else if (i == 0) {
+                        sizeNumber = ' zero,'
+                    } else {
+                        sizeNumber = ' less than 100, '
+                    }
+                    if (Number.isInteger(i) == true) {
+                        integrityNumber = ' whole,';
+                        if (i % 2 == 0) {
+                            parityNumber = ' even,'
+                        } else {
+                            parityNumber = ' odd,'
+                        }
+                    } else {
+                        integrityNumber = ' fractional,';
+                        parityNumber = '';
+                    }
+                    if (i < 0) {
+                        chargeNumber = ' negative(less than 0).'
+                    } else {
+                        chargeNumber = ' positive(more than 0).'
+                    }
+                }
+
+            }
+
+
+
+            function fourthTask() {
+                let startNumber = +prompt('Enter first number');
+                let endNumber;
+                let i;
+                let count = 0;
+                if (Number.isNaN(Number(startNumber)) || startNumber == '') {
+                    startNumber = +prompt('Enter correct first number.');
+                    if (Number.isNaN(Number(startNumber)) || startNumber == '') {
+                        alert('Good by!');
+                        console.log('Good by!');
+                    } else {
+                        secondControl()
+                    }
+                } else {
+                    secondControl()
+                }
+                function secondControl() {
+                    endNumber = +prompt('Enter second number.')
+                    if (Number.isNaN(Number(endNumber)) || endNumber == '') {
+                        endNumber = +prompt('Enter correct first number.');
+                        if (Number.isNaN(Number(endNumber)) || endNumber == '') {
+                            alert('Good by!');
+                            console.log('Good by!');
+                        } else {
+                            cicle();
+                        }
+                    } else {
+                        cicle();
+                    }
+                }
+                function cicle() {
+                    if (startNumber > endNumber) {
+                        for (i = startNumber; count < 7; i--) {
+                            console.log(i);
+                            count++
+                        }
+                    } else {
+                        for (i = startNumber; count < 7; i++) {
+                            console.log(i);
+                            count++
+                        }
+                    }
+                }
+            }
+
+            function scream() {
+                alert('CONGRATULATION!!! You are found!!!')
+            }
+        </script>
+
+
+
+
+    </body>
+
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>HomeWork14</title>
+        <link rel="stylesheet" href="hw14.css">
+        <link href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <div class="first-block">
+            <input class="button-function" type="button" value="Task 1" name="task-1" OnClick="firstTask();">
+        </div>
+        <div class="second-block">
+            <input class="button-function" type="button" value="Task 2" name="task-2" OnClick="secondTask();">
+        </div>
+        <div class="third-block">
+            <input class="button-function" type="button" value="Task 3" name="task-3" OnClick="thirdTask();">
+        </div>
+        <div class="fourth-block">
+            <input class="button-function" type="button" value="Task 4" name="task-4" OnClick="fourthTask();">
+        </div>
+
+        <script>
+            'use strict'
+
+            function firstTask() {
+                let paramOne = prompt('Enter first parameter');
+
+                let paramTwo;
+                let paramThree;
+
+                firstControlOne()
+                function firstControlOne() {
+                    if (paramOne == '') {
+                        paramOne = prompt('Enter correcct first parameter');
+                        if (paramOne == '') {
+                            paramOne = '_'
+                            firstControlTwo()
+                        } else {
+                            firstControlTwo()
+                        }
+                    } else {
+                        firstControlTwo()
+                    }
+                }
+
+                function firstControlTwo() {
+                    if (paramOne == null) {
+                        paramOne = 0;
+                        secondControlOne()
+                    } else {
+                        secondControlOne()
+                    }
+                }
+
+                function secondControlOne() {
+                    paramTwo = prompt('Enter second parameter');
+                    if (paramTwo == '') {
+                        paramTwo = prompt('Enter correcct second parameter');
+                        if (paramTwo == '') {
+                            paramTwo = '_'
+                            secondControlTwo()
+                        } else {
+                            secondControlTwo()
+                        }
+                    } else {
+                        secondControlTwo()
+                    }
+                }
+
+                function secondControlTwo() {
+                    if (paramTwo == null) {
+                        paramTwo = 0;
+                        thirdControlOne()
+                    } else {
+                        thirdControlOne()
+                    }
+                }
+
+                function thirdControlOne() {
+                    paramThree = prompt('Enter third parameter');
+                    if (paramThree == '') {
+                        paramThree = prompt('Enter correcct third parameter');
+                        if (paramThree == '') {
+                            paramThree = '_';
+                            thirdControlTwo()
+                        } else {
+                            thirdControlTwo()
+                        }
+                    } else {
+                        thirdControlTwo()
+                    }
+                }
+
+                function thirdControlTwo() {
+                    if (paramThree == null) {
+                        paramThree = 0;
+                        outputСontrol()
+                    } else {
+                        outputСontrol()
+                    }
+                }
+
+                function outputСontrol() {
+                    if (Number.isNaN(Number(paramOne)) == false && Number.isNaN(Number(paramTwo)) == false && Number.isNaN(Number(paramThree)) == false) {
+                        console.log(+paramOne + +paramTwo + +paramThree)
+                    } else {
+                        console.log(paramOne + paramTwo + paramThree)
+                    }
+                }
+            }
+
+            function secondTask() {
+                let valueOne = prompt('Enter first text value');
+                let valueTwo;
+                let valueThree;
+
+                controlFirstValue()
+                function controlFirstValue() {
+                    if (Number.isNaN(Number(valueOne)) && (typeof valueOne == 'string')) {
+                        controlSecondValue()
+                    } else {
+                        valueOne = prompt('Enter correct first text value');
+                        if (Number.isNaN(Number(valueOne)) && (typeof valueOne == 'string')) {
+                            controlSecondValue()
+                        } else {
+                            alert('Uncorrect data!!!');
+                            console.log('Uncorrect data!!!');
+                        }
+                    }
+
+                    function controlSecondValue() {
+                        valueTwo = prompt('Enter second text value')
+                        if (Number.isNaN(Number(valueTwo)) && (typeof valueTwo == 'string')) {
+                            controlThirdValue()
+                        } else {
+                            valueOne = prompt('Enter correct second text value');
+                            if (Number.isNaN(Number(valueTwo)) && (typeof valueTwo == 'string')) {
+                                controlThirdValue()
+                            } else {
+                                alert('Uncorrect data!!!');
+                                console.log('Uncorrect data!!!');
+                            }
+                        }
+                    }
+
+                    function controlThirdValue() {
+                        valueThree = prompt('Enter third text value')
+                        if (Number.isNaN(Number(valueThree)) && (typeof valueThree == 'string')) {
+                            intermediateControl()
+                        } else {
+                            valueOne = prompt('Enter correct third text value');
+                            if (Number.isNaN(Number(valueThree)) && (typeof valueThree == 'string')) {
+                                intermediateControl()
+                            } else {
+                                alert('Uncorrect data!!!');
+                                console.log('Uncorrect data!!!');
+                            }
+                        }
+                    }
+
+                    function intermediateControl() {
+                        if ((valueOne <= 'z') && (valueTwo <= 'z') && (valueThree <= 'z')) {
+                            finalControl()
+                        } else if ((valueOne >= 'А') && (valueTwo >= 'А') && (valueThree >= 'А')) {
+                            finalControl()
+                        } else {
+                            valueOne = prompt('Uncorrect data! Enter variables in the same language');
+                            controlFirstValue()
+                        }
+                    }
+
+                    function finalControl() {
+                        if (valueOne < valueTwo && valueOne < valueThree && valueTwo < valueThree) {
+                            console.log(valueOne + ' ' + valueTwo + ' ' + valueThree);
+                        } else if (valueOne < valueTwo && valueOne < valueThree && valueThree < valueTwo) {
+                            console.log(valueOne + ' ' + valueThree + ' ' + valueTwo);
+                        } else if (valueTwo < valueOne && valueTwo < valueThree && valueOne < valueThree) {
+                            console.log(valueTwo + ' ' + valueOne + ' ' + valueThree);
+                        } else if (valueTwo < valueOne && valueTwo < valueThree && valueThree < valueOne) {
+                            console.log(valueTwo + ' ' + valueThree + ' ' + valueOne);
+                        } else if (valueThree < valueOne && valueOne < valueTwo && valueThree < valueTwo) {
+                            console.log(valueThree + ' ' + valueOne + ' ' + valueTwo);
+                        } else if (valueThree < valueOne && valueTwo < valueOne && valueThree < valueTwo) {
+                            console.log(valueThree + ' ' + valueTwo + ' ' + valueOne);
+                        } else if (valueOne < valueTwo && valueTwo === valueThree) {
+                            console.log(valueOne + ' ' + valueTwo + ' ' + valueThree);
+                        } else if (valueTwo < valueOne && valueOne === valueThree) {
+                            console.log(valueTwo + ' ' + valueOne + ' ' + valueThree);
+                        } else if (valueThree < valueOne && valueOne === valueTwo) {
+                            console.log(valueThree + ' ' + valueOne + ' ' + valueTwo);
+                        } else if (valueTwo === valueOne && valueOne === valueThree) {
+                            console.log(valueOne + ' ' + valueTwo + ' ' + valueThree);
+                        }
+                    }
+                }
+            }
+
+            function thirdTask() {
+
+                let name = prompt('Enter your name');
+                let lastName = prompt('Enter your last name');
+
+                if ((Number.isNaN(Number(name)) && typeof name == 'string') && (Number.isNaN(Number(lastName)) && typeof name == 'string')) {
+                    console.log('Hello, ' + name.charAt(0).toUpperCase() + name.slice(1).toLowerCase() + ' ' +
+                        lastName.charAt(0).toUpperCase() + lastName.slice(1).toLowerCase() + '!')
+                } else if (Number.isNaN(Number(name)) && typeof name == 'string') {
+                    console.log('Hello, ' + name.charAt(0).toUpperCase() + name.slice(1).toLowerCase() + '!')
+                } else {
+                    console.log('Hello, Noname!')
+                }
+            }
+
+            function fourthTask() {
+                let firstNumber = prompt('Enter first number (more than zero)');
+                let secondNumber;
+                let result;
+
+                firstControl()
+                function firstControl() {
+                    if (Number.isNaN(Number(firstNumber)) == false) {
+                        secondControl()
+                    } else {
+                        firstNumber = prompt('Enter correct first number (more than zero)');
+                        if (Number.isNaN(Number(firstNumber)) == false) {
+                            secondControl()
+                        } else {
+                            console.log('And after all so well began')
+                        }
+                    }
+                }
+
+                function secondControl() {
+                    if (firstNumber > 0) {
+                        thirdControl()
+                    } else {
+                        firstNumber = prompt('Enter correct first number (MORE than zero)');
+                        firstControl()
+                    }
+                }
+
+                function thirdControl() {
+                    secondNumber = prompt('Enter second number (more than zero)');
+                    if (Number.isNaN(Number(secondNumber)) == false) {
+                        fourthControl()
+                    } else {
+                        secondNumber = prompt('Enter correct second number (MORE than zero)');
+                        if (Number.isNaN(Number(secondNumber)) == false) {
+                            fourthControl()
+                        } else {
+                            secondNumber = 2;
+                            outputResults()
+                        }
+                    }
+                }
+
+                function fourthControl() {
+                    if (secondNumber > 0) {
+                        outputResults()
+                    } else {
+                        secondNumber = prompt('Enter correct first number (More than zero)');
+                        if (secondNumber > 0) {
+                            outputResults()
+                        } else {
+                            secondNumber = 2;
+                            outputResults()
+                        }
+                    }
+                }
+
+                function outputResults() {
+                    result = firstNumber ** secondNumber;
+                    console.log(result)
+                }
+            }
+        </script>
+    </body>
+
+</html>

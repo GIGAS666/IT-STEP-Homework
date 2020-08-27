@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>HomeWork17</title>
+    </head>
+
+    <body>
+        <div class="global-conteiner">
+
+            <div class="box-of-task">
+                <div>Task 1 </div>
+                <input class="button button-function" type="button" value="Array of random numbers"
+                    name="arrayOfRandomNumbers" OnClick="arrayOfRandomNumbers();">
+            </div>
+
+            <div class="box-of-task">
+                <div>Task 2 </div>
+                <input class="button button-function" type="button" value="Array filtering" name="arrayFiltering"
+                    OnClick="arrayFiltering();">
+            </div>
+
+            <div class="box-of-task">
+                <div> Task 3</div>
+                <input class="button button-function" type="button" value="Generation of array" name="generationOfArray"
+                    OnClick="generationOfArray();">
+            </div>
+
+            <div class="box-of-task">
+                <div>Task 4.1 </div>
+                <input class="button button-function" type="button" value="Truncated array with alphabetical sorting"
+                    name="truncatedArrayWithAlphabeticalSorting" OnClick="truncatedArrayWithAlphabeticalSorting();">
+            </div>
+
+            <div class="box-of-task">
+                <div>Task 4.2 </div>
+                <input class="button button-function" type="button" value="Array with a lot of property"
+                    name="arrayWithALotOfProperty" OnClick="arrayWithALotOfProperty();">
+            </div>
+
+            <div class="box-of-task">
+                <div>Task 4.3 </div>
+                <input class="button button-function" type="button" value="Age of objects" name="ageOfObjects"
+                    OnClick="ageOfObjects();">
+            </div>
+
+            <div class="box-of-task">
+                <div>Task 4.4 </div>
+                <input class="button button-function" type="button" value="Array with zodiac signs"
+                    name="arrayWithZodiacSign" OnClick="arrayWithZodiacSign();">
+            </div>
+
+            <div class="box-of-task">
+                <div> Task 4.5</div>
+                <input class="button button-function" type="button" value="Array with property-array or property-object"
+                    name="arrayWithPropertyArrayOrPropertyObject" OnClick="arrayWithPropertyArrayOrPropertyObject();">
+            </div>
+
+            <div class="box-of-task">
+                <div>Task 4.6 </div>
+                <input class="button button-function" type="button" value="Adding an id" name="addingAnId"
+                    OnClick="addingAnId();">
+            </div>
+
+            <div class="box-of-task">
+                <div> Task 4.7</div>
+                <input class="button button-function" type="button" value="Fictional character"
+                    name="fictionalCharacter" OnClick="fictionalCharacter();">
+            </div>
+        </div>
+
+        <script>
+            'use strict'
+
+            function arrayOfRandomNumbers() {
+                let countOfOutput = prompt('Enter count of output(only numbers!)');
+                let maxNumberOfRandom = prompt('Enter max number of random (only numbers!)')
+                for (let i = 0; i < countOfOutput; i++) {
+                    function getARandomNumber(min, max) {
+                        max = Math.floor(max);
+                        return Math.floor(Math.random() * (max - min + 1)) + min;
+                    };
+                    console.log(getARandomNumber(0, maxNumberOfRandom));
+                }
+            }
+
+            function arrayFiltering() {
+                let arrayOfUser = prompt('Enter any word as part of array(cancel-end of the array)');
+                let fullArrayOfUser = [];
+                let filteringWord;
+                while (arrayOfUser != null) {
+                    fullArrayOfUser.push(arrayOfUser);
+                    arrayOfUser = prompt('Enter any word as part of array(cancel-end of the array)');
+                };
+                filteringWord = prompt('Enter filtering word');
+                console.log('It`s your original array: ' + fullArrayOfUser)
+                for (let i = 0; i <= fullArrayOfUser.length; i++) {
+                    if (fullArrayOfUser.includes(filteringWord)) {
+                        let indexForDelete = fullArrayOfUser.indexOf(filteringWord, 0);
+                        fullArrayOfUser.splice(indexForDelete, 1);
+                    }
+                }
+                console.log('It`s your filtered array: ' + fullArrayOfUser);
+            }
+
+            function generationOfArray() {
+                let dataOfUser = prompt('Enter any word as part of array(cancel-end of the array)');
+                let fullArrayOfUser = [];
+                while (dataOfUser != null) {
+                    fullArrayOfUser.push(dataOfUser);
+                    dataOfUser = prompt('Enter any word as part of array(cancel-end of the array)');
+                };
+                console.log(fullArrayOfUser);
+            }
+
+            // Work with array of objeckts-------------------------------------------------------------------------------------------------------------
+
+            const arrayOfPersons = [{
+                name: 'Ferdinant',
+                surname: 'Foch',
+                age: 54,
+                nationality: 'French',
+                skill: 'Military management',
+                zodiacSign: undefined,
+                height: 173,
+                isAlive: false,
+            },
+            {
+                name: 'Jackson',
+                surname: 'Bricks',
+                age: 20,
+                nationality: 'USA',
+                skill: 'farmer',
+                height: 187,
+                specialTrait: 'mechanical arms',
+                isFictionalCharacter: true
+            },
+            {
+                name: 'Hideo',
+                surname: 'Kozima',
+                age: 56,
+                nationality: 'USA',
+                skill: 'game developer',
+                height: 173,
+                specialTrait: 'genius',
+                actualGames: ['Death Stranding', 'Metal Gear'],
+                isAlive: true,
+            },
+            {
+                name: 'Kim',
+                surname: 'Kardashian',
+                age: 39,
+                nationality: 'USA',
+                skill: 'model',
+                height: 159,
+                zodiacSign: 'scorpio'
+            },
+            {
+                name: 'Mia',
+                surname: 'Khalifa',
+                age: 27,
+                nationality: 'Lebanon',
+                skill: 'actress',
+                height: 157,
+                zodiacSign: 'saggitarius',
+                specialTrait: 'very exspressionable',
+                isAlive: true,
+                isFictionalCharacter: false
+            },
+            {
+                name: 'Herman',
+                surname: 'Hesse',
+                age: 85,
+                nationality: 'Germany',
+                skill: 'writer',
+                zodiacSign: undefined,
+                isAlive: false,
+                isFictionalCharacter: false,
+                bibliography: ['Der Steppen Wolf', 'Das Glasperlenspiel',]
+            },
+            {
+                name: 'Fedor',
+                surname: 'Dostoevsky',
+                age: 60,
+                nationality: 'Russia',
+                skill: 'writer',
+                isAlive: false,
+                isFictionalCharacter: false,
+                bibliography: ['The demons', 'The Crime and Punishment', 'The Idiot']
+            },
+            {
+                name: 'Doomguy',
+                surname: undefined,
+                age: undefined,
+                nationality: undefined,
+                skill: 'demon slayer',
+                zodiacSign: undefined,
+                isFictionalCharacter: true,
+                specialTrait: 'Angry a bit',
+            },
+            {
+                name: 'Sonic',
+                surname: 'The Hedgehog',
+                age: 13,
+                nationality: undefined,
+                zodiacSign: undefined,
+                isFictionalCharacter: true,
+                specialTrait: 'Fast as f#@k',
+            },
+            {
+                name: 'Bruce',
+                surname: 'Wayne',
+                age: 12,
+                isFictionalCharacter: true
+            },
+            {
+                name: 'Ella',
+                surname: 'Fitzgerald',
+                age: 79,
+                isFrictionalCharacter: false,
+                isAlive: false,
+                specialTrait: 'Amazing voice',
+                signatureSongs: ['Cry Me a river', 'Hello Dolly', 'Summertime', 'In a sentimental mood']
+            }];
+
+            // 111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+
+            function truncatedArrayWithAlphabeticalSorting() {
+                let newArrayOfPersons = arrayOfPersons.map(item => {
+                    item.name == undefined ? item.name = null : item.name = item.name;
+                    item.surname == undefined ? item.surname = null : item.surname = item.surname;
+                    item.age == undefined ? item.age = null : item.age = item.age;
+                    return { name: item.name, surname: item.surname, age: item.age };
+                });
+                function sotrOfPersons(a, b) {
+                    if (a.surname > b.surname) return 1
+                    if (a.surname < b.surname) return -1
+                }
+                console.log(newArrayOfPersons.sort(sotrOfPersons));
+            }
+
+            // 222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222
+            function arrayWithALotOfProperty() {
+                function filterByQuantityOfPropertys(item) {
+                    return Object.keys(item).length >= 8
+                };
+                function sorterByQuantityOfPropertys(a, b) {
+                    if (Object.keys(a).length > Object.keys(b).length) return -1
+                    return 1
+                };
+                console.log(arrayOfPersons.filter(filterByQuantityOfPropertys).sort(sorterByQuantityOfPropertys));
+            }
+
+            // 333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333
+
+            function ageOfObjects() {
+                function sotrOfAge(a, b) {
+                    if (a.age > b.age) return 1
+                    if (a.age < b.age) return -1
+                }
+                console.log(arrayOfPersons.sort(sotrOfAge))
+            }
+
+            // 444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444
+
+            function arrayWithZodiacSign() {
+                function chekPropertyZodiacSign(item) {
+                    if (item.hasOwnProperty('zodiacSign'))
+                        return item;
+                };
+                console.log(arrayOfPersons.filter(chekPropertyZodiacSign));
+            }
+
+            // 555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555
+
+            function arrayWithPropertyArrayOrPropertyObject() {
+                function filterByObject(item) {
+                    for (let key in item)
+                        if (typeof item[key] === 'object') return -1;
+                    return 1;
+                }
+                console.log(arrayOfPersons.sort(filterByObject));
+            }
+
+            // 66666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666
+
+            function addingAnId() {
+                function addingAPropertyId(item) {
+                    let id;
+                    function getRandomId(from, to) {
+                        id = Math.floor((Math.random() * (to - from)) + from);
+                        return id
+                    };
+                    getRandomId(100, 999);
+                    item.id = id;
+                    return item;
+                };
+                console.log(arrayOfPersons.map(addingAPropertyId));
+            }
+
+            // 77777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777
+
+            function fictionalCharacter() {
+                function callbackForFilter(item) {
+                    return item.isFictionalCharacter === true;
+                };
+                function callbackForMap(item) {
+                    item.fictionalUniverse = null;
+                    return item;
+                };
+                console.log(arrayOfPersons.map(callbackForMap).filter(callbackForFilter));
+            }
+
+        </script>
+
+    </body>
+
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>HomeWork18</title>
+        <style>
+            body {
+                background-color: black;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <script>
+            'use strict'
+            let feeding = [];
+            let surroundingObjects = [];
+
+            class Fish {
+                constructor(accelerationOfMovement, strengtheningTheBody) {
+                    this.accelerationOfMovement = 'Development of the muscular system';
+                    this.strengtheningTheBody = 'Skeletal development';
+                };
+                receivingOfOxygen() {
+                    this.breath = `Filters the water using gills`;
+                }
+            };
+            const fish = new Fish;
+            console.log(fish);
+            fish.receivingOfOxygen();
+
+            class Tetrapod extends Fish {
+                constructor(accelerationOfMovement, strengtheningTheBody, adaptationToLand) {
+                    super();
+                    this.adaptationToLand = 'The development of the limbs';
+                };
+                receivingOfOxygen() {
+                    super.receivingOfOxygen();
+                    this.breath = 'Using the lungs'
+                };
+                reasonForTheFunctioningOfTheLimbs() {
+                    this.reasonForTheFunctioningOfTheLimbs = 'Formation of a shoulder joint';
+                };
+                adaptationToTheEnvironment() {
+                    this.poverhnostiBody = 'Development of various skin layers';
+                }
+            };
+            const tetrapod = new Tetrapod();
+            console.log(tetrapod);
+            tetrapod.reasonForTheFunctioningOfTheLimbs();
+            tetrapod.receivingOfOxygen();
+            tetrapod.adaptationToTheEnvironment();
+
+            class TerrestrialMammals extends Tetrapod {
+                constructor(accelerationOfMovement, strengtheningTheBody, adaptationToLand, simplifyReproduction) {
+                    super();
+                    this.simplifyReproduction = 'Live birth';
+                };
+                static evolutionaryDifference() {
+                    feeding.push(this.name);
+                };
+
+            };
+            const terrestrialMammals = new TerrestrialMammals(10);
+            console.log(terrestrialMammals);
+            TerrestrialMammals.evolutionaryDifference();
+
+            class Monkey extends TerrestrialMammals {
+                constructor(accelerationOfMovement, strengtheningTheBody, adaptationToLand, simplifyReproduction, developmentOfConsciousness) {
+                    super();
+                    this.developmentOfConsciousness = 'Communication with sounds and gestures, the raising of offspring';
+                };
+                reasonForTheFunctioningOfTheLimbs() {
+                    super.reasonForTheFunctioningOfTheLimbs();
+                    this.improvedFunctionality = ` and increased movement capabilities with increased complexity of the joint structure`;
+                };
+                static physicalAdaptation() {
+                    surroundingObjects.push(this.name);
+                }
+            };
+            const monkey = new Monkey;
+            console.log(monkey);
+            monkey.reasonForTheFunctioningOfTheLimbs();
+            Monkey.evolutionaryDifference();
+            Monkey.physicalAdaptation();
+
+            class Human extends Monkey {
+                constructor(lifeExpectancy, accelerationOfMovement, strengtheningTheBody, adaptationToLand, simplifyReproduction, developmentOfConsciousness, developmentOfIntelligence) {
+                    super();
+                    this._lifeExpectancy = lifeExpectancy;
+                    this.developmentOfIntelligence = 'Solving complex problems, developing speech';
+                };
+                speciesFeatures() {
+                    return this.dignities = "Striving for development and improvement of the quality of life"
+                    return this.disadvant = "Greed, aggression, pride"
+                };
+                setlifeExpectancy(value) {
+                    if (value < 0) throw new Error("Age can't be negative!");
+                    this._lifeExpectancy = value;
+                };
+                getlifeExpectancy() {
+                    return this._lifeExpectancy;
+                };
+            };
+            const human = new Human();
+            console.log(human);
+            Human.evolutionaryDifference();
+            Human.physicalAdaptation();
+            human.speciesFeatures();
+            human.setlifeExpectancy(84);
+
+            console.log(feeding.join(', ') + " - they feed their offspring with mother's milk");
+            console.log(surroundingObjects.join(', ') + ' - thay have thumb protrusion for ease of use of surrounding objects')
+
+
+        </script>
+
+    </body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>HomeWork15</title>
+        <link rel="stylesheet" href="hw15.css">
+    </head>
+
+    <body>
+        <input class="button-function button" type="button" value="Task 2" name="task-2" OnClick="secondTask();">
+        <input class="button-function button" type="button" value="Task 3" name="task-3" OnClick="thirdTask();">
+        <input class="button-function button" type="button" value="Task 4" name="task-4" OnClick="fourthTask();">
+        <input class="button-function button" type="button" value="Task 5" name="task-5" OnClick="fifthTask();">
+
+        <script>
+            'use strict'
+            let svictim = {
+                name: 'Nicodemus',
+                age: 25,
+                status: 'Prince',
+                gold: null,
+            }
+
+            console.log(svictim);
+
+            function secondTask() {
+                svictim.lastName = "Crow"
+                svictim.charges = "The murder of a family";
+                svictim.enemy = "Draco";
+                svictim.capture = {
+                    count: '2',
+                    escape: '2',
+                    guilty: '0',
+                }
+                console.log(svictim);
+            }
+
+            function thirdTask() {
+                svictim.scream = function () {
+                    alert("I am " + svictim.name + " " + svictim.lastName);
+                    console.log("I am " + svictim.name + " " + svictim.lastName);
+                };
+                svictim.scream();
+
+
+                svictim.choice = function () {
+                    let answer = confirm('Are you ready to fight for the Prince?');
+                    if (answer == true) {
+                        alert("You have overthrown the dictator, Nicodemus the King!");
+                        console.log("You have overthrown the dictator, Nicodemus the King!");
+                    } else {
+                        alert("You did not fight, now you must bow before the dictator Drago!");
+                        console.log("You did not fight, now you must bow before the dictator Drago!");
+                    }
+                };
+                svictim.choice()
+            }
+
+            function fourthTask() {
+                let property
+                for (property in svictim) {
+                    if (typeof svictim[property] !== 'function') {
+                        console.log(property + ': ' + svictim[property])
+                    }
+                }
+            }
+
+            function fifthTask() {
+                let property
+                for (property in svictim) {
+                    if ((typeof svictim[property] == 'object') && (svictim[property] != null)) {
+                        console.log(property + ': ' + svictim[property] + " => " + true)
+                    } else if (typeof svictim[property] !== 'function') {
+                        console.log(property + ': ' + svictim[property] + " => " + false)
+                    }
+                }
+
+            }
+
+        </script>
+
+    </body>
+
+</html>

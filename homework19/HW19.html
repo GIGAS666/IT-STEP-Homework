@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>HomeWork19</title>
+        <style>
+            body {
+                background-color: black;
+                color: #3339f2;
+                font-size: 20px;
+            }
+
+            .bluevioletBorder {
+                border: solid 2px blueviolet;
+                box-sizing: border-box;
+            }
+
+            .borderNone {
+                border: none;
+                margin: 5px;
+            }
+
+            .sizeDivWithContent {
+                width: 100%;
+            }
+
+            .sizeMainDiv {
+                width: 100%;
+                min-height: 100px;
+                padding: 5px;
+            }
+
+            .inputBackground {
+                background-color: blue;
+                color: black;
+                font-size: 25px;
+                width: 320px;
+                white-space: pre-line;
+            }
+
+            .positionInAnswerDiv {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .personalCard {
+                width: 200px;
+                box-sizing: border-box;
+                border: solid 1px blueviolet;
+                margin: 10px;
+                padding: 5px;
+            }
+
+            .ghostDiv {
+                display: none;
+            }
+
+            .color {
+                color: blue;
+            }
+
+        </style>
+    </head>
+
+    <body>
+
+        <script>
+            'use strict'
+
+            const body = document.body;
+
+            //111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+
+            const divFirstTask = document.createElement('div');
+            divFirstTask.setAttribute('class', 'bluevioletBorder sizeMainDiv');
+            divFirstTask.setAttribute('id', 'searchIdElementAndTag');
+            body.append(divFirstTask);
+
+            const inputFirsTask = document.createElement('input');
+            inputFirsTask.setAttribute('value', 'Press here for search id and tegs');
+            inputFirsTask.setAttribute('class', 'borderNone inputBackground');
+            inputFirsTask.setAttribute('type', 'button');
+            inputFirsTask.setAttribute('onclick', 'searchElementWidthIdAndTag()')
+            divFirstTask.append(inputFirsTask);
+
+            const divResultOfSearch = document.createElement('div');
+            divResultOfSearch.setAttribute('class', 'sizeDivWithContent');
+            divResultOfSearch.setAttribute('id', 'resultOfSearch')
+            divFirstTask.append(divResultOfSearch);
+
+            function searchElementWidthIdAndTag() {
+                let userIdForSearch = prompt('Enter id for search (only letters!)');
+                let userTagForSearch = prompt('Enter teg for search (only letters!)');
+                if (userIdForSearch == null || userIdForSearch == '' || userTagForSearch == null || userTagForSearch == '') {
+                    alert('You enter uncorrect data!');
+                } else {
+                    if (document.getElementById(userIdForSearch) != null) {
+                        let quantityOfRequiredElements = document.getElementById(userIdForSearch).querySelectorAll(userTagForSearch).length;
+                        document.getElementById('resultOfSearch').innerHTML += `Quantity of <span class='enteredParameters'>${userTagForSearch}<span>: ${quantityOfRequiredElements} in <span class='enteredParameters'>${userIdForSearch}<span><br>`;
+                    } else {
+                        let quantityOfRequiredElements = document.querySelectorAll(userTagForSearch).length;
+                        document.getElementById('resultOfSearch').innerHTML += `Quantity of  <span class='enteredParameters'>${userTagForSearch}<span>: ${quantityOfRequiredElements} in BODY<br>`;
+                    }
+                }
+            }
+
+            //2222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222
+
+            const divSecondTask = document.createElement('div');
+            divSecondTask.setAttribute('class', 'bluevioletBorder sizeMainDiv');
+            divSecondTask.setAttribute('id', 'processingAnArrayOfPersons');
+            body.append(divSecondTask);
+
+            const inputSecondTask = document.createElement('input');
+            inputSecondTask.setAttribute('value', 'Press here to get result of processing');
+            inputSecondTask.setAttribute('class', 'borderNone inputBackground');
+            inputSecondTask.setAttribute('type', 'button');
+            inputSecondTask.onclick = function () {
+                divResultOfProcessing.classList.toggle('ghostDiv');
+                this.value.indexOf('Press here to get result of processing') > -1 ? this.value = "Press here for close result of processing" :
+                    this.value = "Press here to get result of processing";
+            };
+            divSecondTask.append(inputSecondTask);
+
+            const divResultOfProcessing = document.createElement('div');
+            divResultOfProcessing.setAttribute('class', 'sizeDivWithContent positionInAnswerDiv ghostDiv');
+            divResultOfProcessing.setAttribute('id', 'resultOfProcessing')
+            divSecondTask.append(divResultOfProcessing);
+
+            const arrayOfPersons = [{
+                name: 'Ferdinant',
+                surname: 'Foch',
+                age: 54,
+                nationality: 'French',
+                skill: 'Military management',
+                zodiacSign: undefined,
+                height: 173,
+                isAlive: false,
+            },
+            {
+                name: 'Jackson',
+                surname: 'Bricks',
+                age: 20,
+                nationality: 'USA',
+                skill: 'farmer',
+                height: 187,
+                specialTrait: 'mechanical arms',
+                isFictionalCharacter: true
+            },
+            {
+                name: 'Hideo',
+                surname: 'Kozima',
+                age: 56,
+                nationality: 'Japan',
+                skill: 'game developer',
+                height: 173,
+                specialTrait: 'genius',
+                actualGames: ['Death Stranding', 'Metal Gear'],
+                isAlive: true,
+            },
+            {
+                name: 'Kim',
+                surname: 'Kardashian',
+                age: 39,
+                nationality: 'USA',
+                skill: 'model',
+                height: 159,
+                zodiacSign: 'scorpio'
+            },
+            {
+                name: 'Mia',
+                surname: 'Khalifa',
+                age: 27,
+                nationality: 'Lebanon',
+                skill: 'actress',
+                height: 157,
+                zodiacSign: 'saggitarius',
+                specialTrait: 'very exspressionable',
+                isAlive: true,
+                isFictionalCharacter: false
+            },
+            {
+                name: 'Herman',
+                surname: 'Hesse',
+                age: 85,
+                nationality: 'Germany',
+                skill: 'writer',
+                zodiacSign: undefined,
+                isAlive: false,
+                isFictionalCharacter: false,
+                bibliography: ['Der Steppen Wolf', 'Das Glasperlenspiel',]
+            },
+            {
+                name: 'Fedor',
+                surname: 'Dostoevsky',
+                age: 60,
+                nationality: 'Russia',
+                skill: 'writer',
+                isAlive: false,
+                isFictionalCharacter: false,
+                bibliography: ['The demons', 'The Crime and Punishment', 'The Idiot']
+            },
+            {
+                name: 'Doomguy',
+                surname: undefined,
+                age: undefined,
+                nationality: undefined,
+                skill: 'demon slayer',
+                zodiacSign: undefined,
+                isFictionalCharacter: true,
+                specialTrait: 'Angry a bit',
+            },
+            {
+                name: 'Sonic',
+                surname: 'The Hedgehog',
+                age: 13,
+                nationality: undefined,
+                zodiacSign: undefined,
+                isFictionalCharacter: true,
+                specialTrait: 'Fast as f#@k',
+            },
+            {
+                name: 'Bruce',
+                surname: 'Wayne',
+                age: 12,
+                isFictionalCharacter: true
+            },
+            {
+                name: 'Ella',
+                surname: 'Fitzgerald',
+                age: 79,
+                isFrictionalCharacter: false,
+                isAlive: false,
+                specialTrait: 'Amazing voice',
+                signatureSongs: ['Cry Me a river', 'Hello Dolly', 'Summertime', 'In a sentimental mood']
+            }];
+
+            for (let i = 0; i < arrayOfPersons.length; i++) {
+                let elementOfArray = arrayOfPersons[i];
+                let htmlElementOfArray = '';
+                let arrayElementOfArray = '';
+                for (let property in elementOfArray) {
+                    const name = `name:  ${elementOfArray.name}`
+                    const surname = `surname:  ${elementOfArray.surname}`
+                    const age = `age:  ${elementOfArray.age}`
+                    const nationality = `nationality:  ${elementOfArray.nationality}`
+                    htmlElementOfArray = `${name} <br> ${surname} <br> ${age} <br> ${nationality} <br>`;
+                    if (Array.isArray(elementOfArray[property]) && elementOfArray[property] != null) {
+                        let listOfArray = '';
+                        for (let item in elementOfArray[property]) {
+                            listOfArray += '<li>' + elementOfArray[property][item] + '</li>';
+                        };
+                        arrayElementOfArray += property + ': ' + listOfArray;
+                    };
+                };
+                document.getElementById('resultOfProcessing').innerHTML += `<div class='personalCard'>` + htmlElementOfArray + arrayElementOfArray + `</div>`;
+            };
+
+            //3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333
+
+            const creatingElements = (position, tag, id) => {
+                const element = document.createElement(tag);
+                element.id = id;
+                position.append(element);
+            }
+            const creatingInput = (form, type, id, label) => {
+                const inputConteiner = document.createElement('div');
+                const input = document.createElement('input');
+                input.setAttribute('type', type);
+                input.id = id;
+                inputConteiner.append(input);
+                form.append(inputConteiner);
+                if (label) {
+                    const labelForInput = document.createElement('label');
+                    labelForInput.setAttribute('for', id);
+                    labelForInput.innerText = label;
+                    inputConteiner.append(labelForInput);
+                }
+            }
+
+            const clearForm = (form) => {
+                for (let input of form.elements) {
+                    if (input.type == 'submit') continue;
+                    if (input.type == 'checkbox') input.checked = false;
+                    if (input.type == 'radio') input.checked = false;
+                    input.value = '';
+                }
+            }
+
+            creatingElements(body, 'div', 'clobalDivOfFormRegistration');
+            clobalDivOfFormRegistration.setAttribute('class', 'sizeMainDiv bluevioletBorder');
+
+            creatingInput(clobalDivOfFormRegistration, 'button', 'openRegistrationForm');
+            openRegistrationForm.setAttribute('value', 'Press here for open registration form');
+            openRegistrationForm.setAttribute('class', 'borderNone inputBackground');
+            openRegistrationForm.onclick = function () {
+                divWithFormAndAnswer.classList.toggle('ghostDiv');
+                this.value.indexOf('Press here for open registration form') > -1 ? this.value = "Press here for close registration form" :
+                    this.value = "Press here for open registration form";
+            };
+
+            creatingElements(clobalDivOfFormRegistration, 'div', 'divWithFormAndAnswer');
+            divWithFormAndAnswer.setAttribute('class', 'ghostDiv sizeDivWithContent')
+            creatingElements(divWithFormAndAnswer, 'form', 'mainForm');
+            creatingElements(divWithFormAndAnswer, 'div', 'cardsConteiner');
+
+            creatingInput(mainForm, 'text', 'nameInput', ' Name');
+            creatingInput(mainForm, 'email', 'emailInput', ' Your email');
+            creatingInput(mainForm, 'password', 'passwordInput', ' Your password');
+            creatingInput(mainForm, 'checkbox', 'userAgreementInput', " I have read the user agreement");
+            creatingElements(mainForm, 'textarea', 'wishesForDevelopers');
+            wishesForDevelopers.setAttribute('placeholder', ' Your wishes for the developers');
+            wishesForDevelopers.setAttribute('rows', '5');
+            wishesForDevelopers.setAttribute('cols', '43');
+
+            creatingElements(mainForm, 'p', 'selectingAnAccountParameter');
+            document.getElementById('selectingAnAccountParameter').innerHTML = 'Select parameter of your account:'
+            creatingInput(mainForm, 'radio', 'radioInputFree', 'Free account');
+            radioInputFree.setAttribute('name', 'radioInput');
+            radioInputFree.setAttribute('value', 'freeAccount');
+            creatingInput(mainForm, 'radio', 'radioInputPaid', 'Paid account');
+            radioInputPaid.setAttribute('value', 'paidAccount');
+            radioInputPaid.setAttribute('name', 'radioInput');
+            creatingInput(mainForm, 'submit', 'isSubmit');
+
+
+            let formData = {};
+            for (let input of mainForm.elements) {
+                if (input.type === 'submit') continue
+                if (input.type === 'checkbox') {
+                    input.addEventListener('change', event => {
+                        formData[input.id] = event.target.checked
+                    })
+                    continue
+                }
+                input.addEventListener('change', event => {
+                    formData[input.id] = event.target.value;
+                });
+            };
+
+            mainForm.addEventListener('submit', (event) => {
+                event.preventDefault();
+                const card = document.createElement('div');
+                const nameLine = document.createElement('div');
+                nameLine.innerHTML = `<br><b>Name:</b> <i>${formData.nameInput}</i>`
+                card.append(nameLine);
+
+                const emailLine = document.createElement('div');
+                emailLine.innerHTML = `<b>Email:</b> <i>${formData.emailInput}</i>`
+                card.append(emailLine);
+
+                const passwordLine = document.createElement('div');
+                passwordLine.innerHTML = `<b>Password:</b> <i>${formData.passwordInput}</i>`
+                card.append(passwordLine);
+
+                const userAgreementLine = document.createElement('div');
+                userAgreementLine.innerHTML = `<b>User's agreement:</b> <i>${formData.userAgreementInput ? 'Yes' : 'Not'}</i>`
+                card.append(userAgreementLine);
+
+                const wishesLine = document.createElement('div');
+                wishesLine.innerHTML = `<b>Wishes for developers:</b> <i>${formData.wishesForDevelopers}</i>`
+                card.append(wishesLine);
+
+                let changeOfRadio;
+                if (document.getElementById("radioInputFree").checked) {
+                    changeOfRadio = 'Free';
+                } else if (document.getElementById("radioInputPaid").checked) {
+                    changeOfRadio = 'Paid';
+                } else {
+                    changeOfRadio = "You didn't select param of account";
+                }
+
+                const radioLine = document.createElement('div');
+                radioLine.innerHTML = `<b>Account:</b> <i>${changeOfRadio}</i>`;
+                card.append(radioLine);
+
+                cardsConteiner.append(card);
+                clearForm(event.target)
+
+            })
+
+        </script>
+
+    </body>
+
+</html>

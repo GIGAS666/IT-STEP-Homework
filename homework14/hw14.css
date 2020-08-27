@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.first-block {
+    width: 50%;
+    height: 350px;
+}
+
+.second-block {
+    width: 50%;
+    height: 350px;
+}
+
+.third-block {
+    width: 50%;
+    height: 350px;
+}
+
+.fourth-block {
+    width: 50%;
+    height: 350px;
+}
+
+.button-function {
+    width: 100%;
+    height: 100%;
+    color: slateblue;
+    font-size: 60px;
+    font-family: 'Great Vibes', cursive;
+    border: none;
+    background-image: black;
+    box-sizing: border-box;
+    border: solid 1px lightseagreen;
+}
+
+.button-function:hover {
+    cursor: pointer;
+}

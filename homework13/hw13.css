@@ -1,0 +1,188 @@
+body {
+    background-color: black;
+}
+
+.button-function {
+    width: 150px;
+    height: 150px;
+    border: none;
+    border-radius: 50%;
+    background-color: black;
+    color: darkviolet;
+    box-shadow: 0 0 10px 5px darkviolet;
+}
+
+.button-function:hover {
+    cursor: pointer;
+    border: none;
+}
+
+.button-function:checked {
+    border: none;
+}
+
+.main-block {
+    position: relative;
+    width: 1200px;
+    height: 650px;
+    margin: auto;
+}
+
+.task-one {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    animation: first 8s linear infinite;
+}
+
+.task-two {
+    position: absolute;
+    top: 500px;
+    left: 350px;
+    animation: second 8s linear infinite;
+}
+
+.task-three {
+    position: absolute;
+    top: 0px;
+    left: 700px;
+    animation: third 8s linear infinite;
+}
+
+.task-four {
+    position: absolute;
+    top: 500px;
+    left: 1050px;
+    animation: fourth 8s linear infinite;
+}
+
+@keyframes first {
+    0% {
+        top: 0px;
+    }
+    50% {
+        top: 500px;
+    }
+    100% {
+        top: 0px;
+    }
+}
+
+@keyframes third {
+    0% {
+        top: 0px;
+    }
+    50% {
+        top: 500px;
+    }
+    100% {
+        top: 0px;
+    }
+}
+
+@keyframes second {
+    0% {
+        top: 500px;
+    }
+    50% {
+        top: 0px;
+    }
+    100% {
+        top: 500px;
+    }
+}
+
+@keyframes fourth {
+    0% {
+        top: 500px;
+    }
+    50% {
+        top: 0px;
+    }
+    100% {
+        top: 500px;
+    }
+}
+
+@media (max-width: 1300px) {
+    .task-one {
+        animation:none;
+        position: static;
+        margin: 20px;
+    }
+    .task-two {
+        animation:none;
+        position: static;
+        margin: 20px;
+    }
+    .task-three {
+        animation: none;
+        position: static;
+        margin: 20px;
+    }
+    .task-four {
+        animation: none;
+        position: static;
+        margin: 20px;
+    }
+    .main-block {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    .scream {
+        animation: none;
+        position: static;
+        margin: 20px;
+    }
+}
+
+.easter-egg {
+    text-align: center;
+    margin: 15px auto;
+}
+
+.secret {
+    color: gray;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 50px;
+}
+
+.scream {
+    width: 60px;
+    height: 20px;
+    border: none;
+    color: black;
+    background-color: black;
+    animation: screamofsoul 50s infinite linear;
+    position: absolute;
+}
+
+.scream:hover {
+    cursor: pointer;
+}
+
+@keyframes screamofsoul {
+    0% {
+        top: -20px;
+        left: -60px;
+    }
+    20% {
+        top: -20px;
+        left: 1200px;;
+    }
+    60% {
+        top: 650px;
+        left: 1200px;
+    }
+    80% {
+        top: 650px;
+        left: -60px;
+    }
+    100%{
+        top: -20px;
+        left: -60px;
+    }
+}

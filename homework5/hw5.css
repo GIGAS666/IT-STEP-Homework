@@ -1,0 +1,83 @@
+body{
+    background-image: url(https://u.livelib.ru/album/1000013921/o/c6hmpq8h/o-o.jpeg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+.main_block{
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 50px;
+    background-color: rgba(171, 105, 201,0.5);
+    padding: 30px;
+    margin-bottom: 200px;
+}
+img{
+    width: 200px;
+    height: 300px;
+}
+.title{
+    font-family: 'Sancreek', cursive;
+    font-size: 60px;
+    text-align: center;
+    text-transform: uppercase;
+}
+.subtitle{
+    font-family: 'Creepster', cursive;
+    font-size: 40px;
+    text-align: center;
+    margin-top: 25px;
+    text-decoration: underline;
+}
+.bone{
+    background-color: rgba(101, 55, 122,0.5);
+}
+.box{
+    width: 200px;
+    height: 410px;
+    text-align: center;
+    vertical-align: middle;
+    margin: 30px;
+    border: solid violet 3px;
+    font-family:  'Creepster';
+    font-size: 20px;
+}
+.sale{
+    background-color: red;
+    color: blue;
+}
+.cost{
+    font-size: 35px;
+}
+.meat{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.box:hover{
+    border-color: darkgreen;
+    background-color: limegreen;
+}
+.sale:hover{
+    background-color: blue;
+    color: red;
+    border: solid blueviolet 3px;
+}
+.dark-box{
+    position: relative;
+}
+  .hidden{
+  display: none;
+  position: absolute;
+  top: 130%;
+  left: 0px;
+  width: 300px;
+  background-color: lightgray;
+  color: green;
+  padding: 5px;
+  text-align: center;
+  font-size: 12px;
+  font-family: 'Times New Roman', Times, serif;
+  }
+  .hover:hover +
+  .hidden{display: block;}
+  

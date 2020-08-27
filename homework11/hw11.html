@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+
+    <body>
+
+        <script>
+            'use strict'
+
+            /* task 1 */
+            let request = prompt('Enter the text');
+            alert(request);
+            console.log(request);
+            /* task 1 */
+
+            /* task 2 */
+            let numberFirst = +prompt('Enter first number');
+            let numberSecond = +prompt('Enter second number');
+            let numberThird = +prompt('Enter third number');
+            alert(numberFirst + numberSecond + numberThird);
+            console.log('Your amount is ' + (numberFirst + numberSecond + numberThird))
+            /* task 2 */
+
+            /* task 3 */
+            let userName = prompt('Enter your name');
+            let userAge = +prompt('Enter your age (numbers)');
+            if (userAge >= 18) {
+                alert('Welcome to the hell, ' + userName.charAt(0).toUpperCase() + userName.slice(1).toLowerCase());
+                console.log('Welcome to the hell, ' + userName.charAt(0).toUpperCase() + userName.slice(1).toLowerCase());
+            } else {
+                alert('Sorry, ' + userName.charAt(0).toUpperCase() + userName.slice(1).toLowerCase() + ', access closed.');
+                console.log('Sorry, ' + userName.charAt(0).toUpperCase() + userName.slice(1).toLowerCase() + ', access closed.')
+            }
+            /* task 3 */
+
+            /* task 4 */
+            if (confirm('Do you want enter name of block?')) {
+                let nameBlock = prompt('Enter name of block.');
+                if (nameBlock != '') {
+                    if (confirm('Do you want enter name of element?')) {
+                        let nameElement = prompt('Enter name of element.');
+                        if (nameElement != '') {
+                            if (confirm('Do you want enter name of modifier?')) {
+                                let nameModifier = prompt('Enter name of modifier.');
+                                if (nameModifier != '') {
+                                    alert('Name of class is ' + nameBlock.toLowerCase() + '__' + nameElement.toLowerCase() + '_' + nameModifier.toLowerCase());
+                                    console.log('Name of class is ' + nameBlock.toLowerCase() + '__' + nameElement.toLowerCase() + '_' + nameModifier.toLowerCase());
+                                } else {
+                                    alert('Uncorrect name of modifier! Name of class is ' + nameBlock.toLowerCase() + '__' + nameElement.toLowerCase());
+                                    console.log('Name of class is ' + nameBlock.toLowerCase() + '__' + nameElement.toLowerCase());
+                                }
+                            } else {
+                                alert('Name of class is ' + nameBlock.toLowerCase() + '__' + nameElement.toLowerCase());
+                                console.log('Name of class is ' + nameBlock.toLowerCase() + '__' + nameElement.toLowerCase());
+                            }
+                        } else {
+                            alert('Uncorrect name of element! Name of class is ' + nameBlock.toLowerCase());
+                            console.log('Name of class is ' + nameBlock.toLowerCase());
+                        }
+                    } else {
+                        alert('Name of class is ' + nameBlock.toLowerCase());
+                        console.log('Name of class is ' + nameBlock.toLowerCase());
+                    }
+                } else {
+                    alert('Uncorrect name of block! Element not assigned class');
+                    console.log('Element not assigned class');
+                }
+            } else {
+                alert('Element not assigned class');
+                console.log('Element not assigned class');
+            }
+            /* task 4 */
+
+            /* task 5 */
+            let firstNumber = +prompt('Enter first number.');
+            let secondNumber = +prompt('Enter second number.');
+            let matematicalAction = prompt('Select matematical action (div, plus, mult, minus)');
+            if (matematicalAction == 'div') {
+                alert(firstNumber / secondNumber);
+                console.log(firstNumber / secondNumber);
+            } else {
+                if (matematicalAction == 'plus') {
+                    alert(firstNumber + secondNumber);
+                    console.log(firstNumber + secondNumber);
+                } else {
+                    if (matematicalAction == 'mult') {
+                        alert(firstNumber * secondNumber);
+                        console.log(firstNumber * secondNumber);
+                    } else {
+                        if (matematicalAction == 'minus') {
+                            alert(firstNumber - secondNumber);
+                            console.log(firstNumber - secondNumber);
+                        } else {
+                            if (matematicalAction != ('div' || 'plus' || 'mult' || 'minus')) {
+                                alert('You are enter uncorrect data');
+                                console.log('You are enter uncorrect data');
+                            }
+                        }
+                    }
+                }
+            }
+            /* task 5 */
+        </script>
+
+    </body>
+
+</html>

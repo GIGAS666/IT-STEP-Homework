@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <link rel="stylesheet" href="hw12.css">
+    </head>
+
+    <body>
+        <div class="main-box">
+            <input class="task-one button-function" type="button" value="Task 1" name="task-1" OnClick="a();">
+            <input class="task-two button-function" type="button" value="Task 2" name="task-2" OnClick="b();">
+            <input class="task-three button-function" type="button" value="Task 3" name="task-3" OnClick="c();">
+            <input class="task-four button-function" type="button" value="Task 4" name="task-4" OnClick="d();">
+        </div>
+
+        <script>
+            'use strict'
+
+            function a() {
+                let userName = prompt('Enter your name');
+                let userLastName = prompt('Enter your last name');
+                let userNickName = prompt('Enter your patronymic');
+
+                if (userName && userLastName && userNickName) {
+                    alert('Hello, ' + userName.charAt(0).toUpperCase() + userName.slice(1).toLowerCase() + ' '
+                        + userLastName.charAt(0).toUpperCase() + userLastName.slice(1).toLowerCase() + '!');
+                    console.log('Hello, ' + userName.charAt(0).toUpperCase() + userName.slice(1).toLowerCase() + ' '
+                        + userLastName.charAt(0).toUpperCase() + userLastName.slice(1).toLowerCase() + '!');
+                } else if (userName && userLastName) {
+                    alert('Hello, ' + userName.charAt(0).toUpperCase() + userName.slice(1).toLowerCase() + ' '
+                        + userLastName.charAt(0).toUpperCase() + userLastName.slice(1).toLowerCase() + '!');
+                    console.log('Hello, ' + userName.charAt(0).toUpperCase() + userName.slice(1).toLowerCase() + ' '
+                        + userLastName.charAt(0).toUpperCase() + userLastName.slice(1).toLowerCase() + '!');
+                } else if (userNickName && userLastName) {
+                    alert('Hello, ' + userNickName.charAt(0).toUpperCase() + userNickName.slice(1).toLowerCase() + '!');
+                    console.log('Hello, ' + userNickName.charAt(0).toUpperCase() + userNickName.slice(1).toLowerCase() + '!');
+                } else if (userNickName && userName) {
+                    alert('Hello, ' + userName.charAt(0).toUpperCase() + userName.slice(1).toLowerCase() + '!');
+                    console.log('Hello, ' + userName.charAt(0).toUpperCase() + userName.slice(1).toLowerCase() + '!');
+                } else if (userName) {
+                    alert('Hello, ' + userName.charAt(0).toUpperCase() + userName.slice(1).toLowerCase() + '!');
+                    console.log('Hello, ' + userName.charAt(0).toUpperCase() + userName.slice(1).toLowerCase() + '!');
+                } else if (userLastName) {
+                    alert('Hello, ' + userLastName.charAt(0).toUpperCase() + userLastName.slice(1).toLowerCase() + '!');
+                    console.log('Hello, ' + userLastName.charAt(0).toUpperCase() + userLastName.slice(1).toLowerCase() + '!');
+                } else if (userNickName) {
+                    alert('Hello, ' + userNickName.charAt(0).toUpperCase() + userNickName.slice(1).toLowerCase() + '!');
+                    console.log('Hello, ' + userNickName.charAt(0).toUpperCase() + userNickName.slice(1).toLowerCase() + '!');
+                } else if ((userName == '' && userLastName == '' && userNickName == '') || userNickName || userLastName) {
+                    alert('Hello, Noname!');
+                    console.log('Hello, Noname!');
+                }
+            }
+
+            function b() {
+                let anyNumber = prompt('Enter any number');
+                let sizeNumber;
+                let parityNumber;
+                let integrityNumber;
+                let chargeNumber;
+
+                if (anyNumber > 100) {
+                    sizeNumber = ' greater than 100, '
+                } else if (anyNumber == 100) {
+                    sizeNumber = ' 100,'
+                } else {
+                    sizeNumber = ' less than 100, '
+                }
+                if (Number.isInteger(+anyNumber) == true) {
+                    integrityNumber = ' whole,';
+                    if (anyNumber % 2 == 0) {
+                        parityNumber = ' even,'
+                    } else {
+                        parityNumber = ' odd,'
+                    }
+                } else {
+                    integrityNumber = ' fractional,';
+                    parityNumber = '';
+                }
+                if (anyNumber < 0) {
+                    chargeNumber = ' negative.'
+                } else {
+                    chargeNumber = ' positive.'
+                }
+                if (!isNaN(parseFloat(anyNumber)) && isFinite(parseFloat(anyNumber))) {
+                    console.log('Your number is' + sizeNumber + parityNumber + integrityNumber + chargeNumber);
+                    alert('Your number is' + sizeNumber + parityNumber + integrityNumber + chargeNumber);
+                } else {
+                    let typeOfAnyNumber = typeof anyNumber;
+                    if (typeOfAnyNumber != 'string') {
+                        alert('It is not number, it is ' + typeOfAnyNumber + '!');
+                        console.log('It is not number, it is ' + typeOfAnyNumber + '!');
+                    } else {
+                        let alphabet = 'abcdefghijklmopqrstuvwxyz'
+                        let firstChar = anyNumber[0].toLocaleLowerCase();
+                        if (alphabet.indexOf(firstChar) >= 0) {
+                            alert('It is not number, it is ' + typeOfAnyNumber + ' on English!');
+                            console.log('It is not number, it is ' + typeOfAnyNumber + ' on English!');
+                        } else {
+                            alert('It is not number, it is ' + typeOfAnyNumber + ' on Russian!');
+                            console.log('It is not number, it is ' + typeOfAnyNumber + ' on Russian!');
+                        }
+                    }
+                }
+            }
+
+            function c() {
+                let userName = prompt('Enter your name');
+                let userAge = +prompt('Enter your age (numbers)');
+
+                userAge >= 18 ?
+                    console.log('Welcome to the hell, ' + userName.charAt(0).toUpperCase() + userName.slice(1).toLowerCase()) :
+                    console.log('Sorry, ' + userName.charAt(0).toUpperCase() + userName.slice(1).toLowerCase() + ', access closed.');
+                userAge >= 18 ? alert('Welcome to the hell, ' + userName.charAt(0).toUpperCase() + userName.slice(1).toLowerCase()) :
+                    alert('Sorry, ' + userName.charAt(0).toUpperCase() + userName.slice(1).toLowerCase() + ', access closed.')
+            }
+
+            function d() {
+                let useValue = +prompt('Enter any number from 0 to 9')
+
+                switch (useValue) {
+                    case 0:
+                        alert('Zero');
+                        console.log('Zero');
+                        break
+                    case 1:
+                        alert('One');
+                        console.log('One');
+                        break
+                    case 2:
+                        alert('Two');
+                        console.log('Two');
+                        break
+                    case 3:
+                        alert('Three');
+                        console.log('Three');
+                        break
+                    case 4:
+                        alert('Four');
+                        console.log('Four');
+                        break
+                    case 5:
+                        alert('Five');
+                        console.log('Five');
+                        break
+                    case 6:
+                        alert('Six');
+                        console.log('Six');
+                        break
+                    case 7:
+                        alert('Seven');
+                        console.log('Seven');
+                        break
+                    case 8:
+                        alert('Eight');
+                        console.log('Eight');
+                        break
+                    case 9:
+                        alert('Nine');
+                        console.log('Nine');
+                        break
+                    default:
+                        alert('This value is not valid.');
+                        console.log('This value is not valid.');
+                        break
+                }
+            }
+
+        </script>
+
+    </body>
+
+</html>
